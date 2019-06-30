@@ -22,11 +22,11 @@ class Index extends Component{
    render() {
           let [results1, totalExperience1] =pickPokemon(Pokedex.defaultProps.pokemons, 4);
           let [results2, totalExperience2] =pickPokemon(Pokedex.defaultProps.pokemons, 4);
-          let winner=((results1>results2)?0:-1);
+
        return (
             <div>
-                <Pokedex background={"grey"} isWinner={winner === 0}  pokemons={results1}/>
-                <Pokedex  pokemons={results2} isWinner={winner === -1} />
+                <Pokedex background={"grey"} isWinner={((totalExperience1>totalExperience2)?'win':'lose')}  pokemons={results1}/>
+                <Pokedex  pokemons={results2} isWinner={((totalExperience1<totalExperience2)?'win':'lose')} />
             </div>
        );
    }

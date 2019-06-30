@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Pokecard from './Pokecard';
-
+import './Pokedex.scss';
 
 
 // function PokemonPicker(length){
@@ -28,11 +28,8 @@ class Pokedex extends Component {
     }
 
     render() {
-        let win="";
-       
-        if(this.props.isWinner){
-            win="you are winner";
-        }
+        
+        let win=(this.props.isWinner==='win'?'You are the winner':'you lose the GAME');
         
   
         return (
@@ -44,7 +41,7 @@ class Pokedex extends Component {
             //     />))}</div>
             
             <div className='pokePanel'>
-             <p>{win}</p>
+            <p>{win}</p>
            
             {   
                 

@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
-import './Pokecard.css';
+import './Pokecard.scss';
 
-let imgpreUrl='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/';
+let imgpreUrl='https://assets.pokemon.com/assets/cms2/img/pokedex/detail/';
+
+let addToThree=(number)=>number<=999?('00'+number).slice(-3):number;
 
 
 class Pokecard extends Component {
@@ -13,7 +15,8 @@ class Pokecard extends Component {
     }
     
     render() {
-        let imgUrl=imgpreUrl+this.props.id+'.png';
+        let imgUrl=imgpreUrl+addToThree(this.props.id)+'.png';
+        console.log(imgUrl);
         return (
          <div className='pokecard' style={this.props.style}><p>id: {this.props.id}</p>
          <p>name: {this.props.name}</p>
