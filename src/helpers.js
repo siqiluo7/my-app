@@ -25,4 +25,4 @@ function remove(picked){
 //     return food.filter(item => item !== picked)
 // }
 
-export {choice, remove, food};
+export {choice, remove};
