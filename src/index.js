@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import Pokedex from './Pokedex';
 import * as serviceWorker from './serviceWorker';
 import Timer from './Timer';
+import Button from './Button';
+import LuckySeven from './LuckySeven';
    
 
 
@@ -26,9 +28,11 @@ class Index extends Component{
 
        return (
             <div>
+                <Button />
                 <Timer maxNumber={50}/>
                 <Pokedex background={"grey"} isWinner={((totalExperience1>totalExperience2)?'win':'lose')}  pokemons={results1}/>
                 <Pokedex  pokemons={results2} isWinner={((totalExperience1<totalExperience2)?'win':'lose')} />
+                <LuckySeven />
             </div>
        );
    }
